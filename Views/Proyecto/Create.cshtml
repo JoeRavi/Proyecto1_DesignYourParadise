@@ -1,0 +1,86 @@
+﻿@model Proyecto1_EstebanRavazoli.Models.Proyecto
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Crear proyecto</h1>
+
+<h4>Proyecto</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+            <div class="form-group">
+                <label asp-for="IdCliente" class="control-label"></label>
+                <input asp-for="IdCliente" class="form-control" type="text" />
+                <span asp-validation-for="IdCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadDormitorios" class="control-label"></label>
+                <input asp-for="CantidadDormitorios" class="form-control" />
+                <span asp-validation-for="CantidadDormitorios" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadBaniosCompletos" class="control-label"></label>
+                <input asp-for="CantidadBaniosCompletos" class="form-control" />
+                <span asp-validation-for="CantidadBaniosCompletos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantidadMediosBanios" class="control-label"></label>
+                <input asp-for="CantidadMediosBanios" class="form-control" />
+                <span asp-validation-for="CantidadMediosBanios" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="SalaIntegradaConCocina" /> @Html.DisplayNameFor(model => model.SalaIntegradaConCocina)
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="AreaPilasAbierta" /> @Html.DisplayNameFor(model => model.AreaPilasAbierta)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="TerrazaTamanio" class="control-label"></label>
+                <select asp-for="TerrazaTamanio" class="form-control" asp-items="Html.GetEnumSelectList<Terraza>()"></select>
+                <span asp-validation-for="TerrazaTamanio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PisoTipo" class="control-label"></label>
+                <select asp-for="PisoTipo" class="form-control" asp-items="Html.GetEnumSelectList<TipoDePiso>()"></select>
+                <span asp-validation-for="PisoTipo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MuebleCocinaMaterial" class="control-label"></label>
+                <select asp-for="MuebleCocinaMaterial" class="form-control" asp-items="Html.GetEnumSelectList<MuebleCocina>()"></select>
+                <span asp-validation-for="MuebleCocinaMaterial" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MetrosConstruccion" class="control-label"></label>
+                <select asp-for="MetrosConstruccion" class="form-control" asp-items="Html.GetEnumSelectList<MetrosConstruccion>()"></select>
+                <span asp-validation-for="MetrosConstruccion" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Enviar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Regresar a la lista</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Proyecto1_EstebanRavazoli.Models.Proyecto>
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Proyectos</h1>
+
+<!--
+    
+
+
+-->
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdProyecto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadDormitorios)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadBaniosCompletos)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantidadMediosBanios)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SalaIntegradaConCocina)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AreaPilasAbierta)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TerrazaTamanio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PisoTipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MuebleCocinaMaterial)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MetrosConstruccion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostoPorMetroCuadrado)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdProyecto)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IdCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CantidadDormitorios)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CantidadBaniosCompletos)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CantidadMediosBanios)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SalaIntegradaConCocina)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.AreaPilasAbierta)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TerrazaTamanio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PisoTipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MuebleCocinaMaterial)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.MetrosConstruccion)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CostoPorMetroCuadrado)
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
